@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* common classes */
+.container {
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Section */
+header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 100;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.nav-logo {
+    max-width: 257px;
+}
+
+.nav-logo>img {
+    width: 100%;
+    height: auto;
+}
+
+/* CSS-only hamburger menu */
+.menu-toggle {
+    display: none;
+    /* Hide the checkbox */
+}
+
+.ham-menu {
+    display: none;
+    /* Will be shown in media query */
+    cursor: pointer;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Banner Section */
+.banner-section {
+    background: url(../assets/Rectangle\ 1.png) no-repeat center center;
+    background-size: cover;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+    width: 100%;
+}
+
+.publishing-text {
+    color: #ffe8d3;
+    font-family: "Lora", serif;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.banner-content h1 {
+    font-family: "Lora", serif;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    background-color: #385777;
+    cursor: pointer;
+}
+
+.btn a {
+    color: white;
+    text-transform: uppercase;
+}
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+/* Product Section */
+.product-section {
+    padding: 60px 0;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.product-header h2 {
+    font-family: "Lora", serif;
+    font-size: 32px;
+}
+
+.product-header a {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.book-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.book-item {
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 270px;
+    margin-bottom: 30px;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.book-item img:hover {
+    transform: scale(1.05);
+}
+
+.author {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    margin: 15px 0 5px;
+}
+
+.book-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: red;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .banner-content h1 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* CSS-only hamburger menu toggle */
+    .ham-menu {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .menu-toggle:checked~.nav-menu {
+        max-height: 500px;
+        /* Large value to accommodate all items */
+        padding: 20px 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:checked~.ham-menu i {
+        transform: rotate(90deg);
+    }
+
+    .nav-logo>img {
+        width: 180px;
+    }
+
+    .banner-content h1 {
+        font-size: 40px;
+    }
+
+    .book-item {
+        flex: 1 1 160px;
+        max-width: 220px;
+    }
+
+    .banner-section {
+        min-height: 500px;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    .nav-logo>img {
+        width: 150px;
+    }
+
+    .banner-content h1 {
+        font-size: 30px;
+    }
+
+    .product-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .book-item {
+        flex: 1 1 140px;
+        max-width: 100%;
+    }
+
+    .book-section {
+        justify-content: space-around;
+    }
+
+    .banner-section {
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner-content h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .book-section {
+        gap: 15px;
+    }
+
+    .book-item {
+        flex: 0 0 100%;
+        max-width: 200px;
+    }
+
+    .banner-section {
+        min-height: 350px;
+    }
+
+    .banner-content {
+        padding: 40px 0;
+    }
+}
